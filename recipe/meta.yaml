@@ -9,7 +9,7 @@ source:
   sha256: dad9b0b9284d3fae3a8c569b095aca81d7a355aeb1565b94a46d26e43aea88ff
 
 build:
-  noarch: python
+  noarch: python>=3.8
   number: 0
   script: rm -f pyproject.toml; {{ PYTHON }} -m pip install --no-deps .
 
