@@ -1,4 +1,4 @@
-{% set version = "0.9.3" %}
+{% set version = "0.9.4" %}
 
 package:
   name: rwa-python
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/DecBayComp/RWA-python/archive/v{{ version }}.tar.gz
-  sha256: dad9b0b9284d3fae3a8c569b095aca81d7a355aeb1565b94a46d26e43aea88ff
+  sha256: 4932db397b7db5185ade8bc54674963b5c29d7ab2d55af477c99ec2e84396a51
 
 build:
   noarch: python
