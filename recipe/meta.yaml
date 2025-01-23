@@ -10,19 +10,19 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: rm -f pyproject.toml; {{ PYTHON }} -m pip install --no-deps .
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - hdf5
     - h5py
     - numpy
     - pandas
-    - python >=3.8
+    - python >={{ python_min }}
     - scipy
     - six
 
@@ -31,6 +31,7 @@ test:
     - rwa
   requires:
     - pytest
+    - python {{ python_min }}
   commands:
     - pytest tests/
   source_files:
