@@ -146,4 +146,5 @@ Feedstock Maintainers
 =====================
 
 * [@DecBayComp](https://github.com/DecBayComp/)
+* [@francoislaurent](https://github.com/francoislaurent/)
 
