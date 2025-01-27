@@ -17,11 +17,9 @@ build:
 requirements:
   build:
     - pip
-    - poetry
-    - python >={{ python_min }}
   host:
     - poetry
-    - python >={{ python_min }}
+    - python {{ python_min }}
   run:
     - hdf5
     - h5py
