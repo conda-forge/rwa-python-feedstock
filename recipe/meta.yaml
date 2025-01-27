@@ -1,4 +1,5 @@
-{% set version = "0.9.4" %}
+{% set version = "0.9.5" %}
+{% set python_min = "3.8" %}
 
 package:
   name: rwa-python
@@ -6,7 +7,7 @@ package:
 
 source:
   url: https://github.com/DecBayComp/RWA-python/archive/v{{ version }}.tar.gz
-  sha256: 4932db397b7db5185ade8bc54674963b5c29d7ab2d55af477c99ec2e84396a51
+  sha256: 02b01cd39b773385fc6e744d82840274b35b21f71497e219ae7d2ba03b6cde84
 
 build:
   noarch: python
@@ -16,15 +17,15 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
+    - setuptools
   run:
     - hdf5
     - h5py
-    - numpy
+    - {{ pin_compatible('numpy') }}
     - pandas
-    - python >=3.8
+    - python >={{ python_min }}
     - scipy
-    - setuptools
     - six
 
 test:
@@ -32,6 +33,7 @@ test:
     - rwa
   requires:
     - pytest
+    - python {{ python_min }}
   commands:
     - pytest tests/
   source_files:
