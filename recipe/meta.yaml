@@ -12,20 +12,18 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install --no-deps .
+  script: rm -f pyproject.toml; {{ PYTHON }} -m pip install --no-deps .
 
 requirements:
-  build:
-    - pip
   host:
-    - poetry
+    - pip
     - python {{ python_min }}
+    - setuptools
   run:
     - hdf5
     - h5py
-    - numpy
+    - {{ pin_compatible('numpy') }}
     - pandas
-    - poetry
     - python >={{ python_min }}
     - scipy
     - six
@@ -35,6 +33,7 @@ test:
     - rwa
   requires:
     - pytest
+    - python {{ python_min }}
   commands:
     - pytest tests/
   source_files:
