@@ -1,4 +1,4 @@
-{% set version = "0.9.5" %}
+{% set version = "0.10" %}
 {% set python_min = "3.8" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/DecBayComp/RWA-python/archive/v{{ version }}.tar.gz
-  sha256: 02b01cd39b773385fc6e744d82840274b35b21f71497e219ae7d2ba03b6cde84
+  sha256: 134624dba8c9b948a52d16862caae9c6404a88c80520a4796730de206dab7926
 
 build:
   noarch: python
